@@ -1,0 +1,26 @@
+{
+  "name": "x-bog-1",
+  "version": "1.0.0",
+  "description": "First trial",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahkiemcm/x-bog-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahkiemcm/x-bog-1/issues"
+  },
+  "homepage": "https://github.com/ahkiemcm/x-bog-1#readme",
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.10",
+    "morgan": "^1.9.1"
+  }
+}
