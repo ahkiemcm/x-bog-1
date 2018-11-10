@@ -7,8 +7,4 @@ const CreatureSchema = new Schema({
     description: String
 })
 
-const Creature = mongoose.model('Creature', CreatureSchema)
-
-module.exports = {
-    Creature
-}
+module.exports = mongoose.model('Creature', CreatureSchema)
