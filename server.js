@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const logger = require('morgan')
 const app = express()
+const routes = require('./routes/index')
 
 mongoose.connect('process.env.MONGODB_URI')
 
