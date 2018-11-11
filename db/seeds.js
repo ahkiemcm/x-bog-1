@@ -1,16 +1,27 @@
-const { Creature } = require('./connections')
+const mongoose = require('./connections')
+const Creature = require('../models/Creature')
 
-mongoose.Promise = global.Promise
-mongoose.connect(process.env.MONGODB_URI)
-
-const db = mongoose.connection
-// using Promises
-Creature.remove().then(() => {
-    const luke = new Creature({ name: 'Luke', description: 'Jedi' })
-    return luke.save()
-}).then(() => {
-    const darth = new Creature({ name: 'Darth Vader', description: 'Father of Luke' })
-    return darth.save()
-}).then(() => {
-    db.close()
+const darkMagician = new Creature({
+    name: 'Dark Magician',
+    atkPower: 2500,
+    description: "Magician of dark magic"
 })
+
+const redEyes = new Creature({
+    name: 'Red-Eyes Black Dragon',
+    atkPower: 2300,
+    description: 'Big ass dragon with red eyes'
+})
+
+const celticWarrior = new Creature({
+    name: 'Celtic Warrior',
+    atkPower: 1100,
+    description: 'Yo, he weak af but he got heart'
+})
+Creature.remove({})
+    .then(() => Creature.insertMany([darkMagician, redEyes, celticWarrior]))
+    .then(() => darkMagician.save())
+    .then(() => redEyes.save())
+    .then(() => celticWarrior.save())
+    .then(() => console.log("Saved Succesfully"))
+    .then(() => mongoose.connection.close())

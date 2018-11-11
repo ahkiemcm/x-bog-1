@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const creatureController = require('../controllers/creatureController')
 
 router.get('/api/creatures', creatureController.index)
 router.get('/api/creatures/new', creatureController.new)
