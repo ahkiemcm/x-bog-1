@@ -1,6 +1,4 @@
-require('dotenv').config()
-const mongoose = require('mongoose')
-const { Creature } = require('./schema')
+const { Creature } = require('./connections')
 
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI)
