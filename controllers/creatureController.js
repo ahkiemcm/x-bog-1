@@ -12,7 +12,7 @@ const creatureController = {
         res.send("New")
     },
     show: (req, res) => {
-        Creature.findById(req.params.userId)
+        Creature.findById(req.params.creatureId)
             .then((creature) => {
                 res.send(creature)
             })
@@ -24,14 +24,14 @@ const creatureController = {
         })
     },
     update: (req, res) => {
-        Creature.findByIdAndUpdate(req.params.userId, req.body)
+        Creature.findByIdAndUpdate(req.params.creatureId, req.body)
             .then((updatedCreature) => {
-                updatedUser.save()
+                updatedCreature.save()
                 res.send(updatedCreature)
             })
     },
     delete: (req, res) => {
-        User.findByIdAndDelete(req.params.userId)
+        Creature.findByIdAndDelete(req.params.creatureId)
             .then(() => {
                 res.send(200)
             })
