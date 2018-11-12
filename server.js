@@ -1,27 +1,18 @@
 require('dotenv').config()
 const express = require('express')
-const mongoose = require('mongoose')
 const logger = require('morgan')
 const app = express()
-const routes = require('./routes/index')
-
-mongoose.connect('process.env.MONGODB_URI')
-
-const db = mongoose.connection
-db.on('error', err => {
-    console.log(err)
-})
-
-db.on('open', () => {
-    console.log('Connected to MongoDB')
-})
+const router = require('./routes/index')
 
 app.use(logger('dev'))
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 
 app.get('/', (req, res) => {
     res.send("Hello World")
 })
+app.use('/', router)
 
 const PORT = process.env.PORT || 3001
 
