@@ -25,5 +25,8 @@
     "mongoose": "^5.3.10",
     "morgan": "^1.9.1",
     "postinstall": "^0.4.2"
+  },
+  "engines": {
+    "node": "10.13.0"
   }
 }

@@ -2,9 +2,9 @@ const Creature = require('../models/Creature')
 
 const creatureController = {
     index: (req, res) => {
-        creature.find({})
+        Creature.find({})
             .then((creature) => {
-                res.send(creature)
+                res.render(creature)
             })
     },
     new: (req, res) => {
@@ -14,7 +14,7 @@ const creatureController = {
     show: (req, res) => {
         Creature.findById(req.params.creatureId)
             .then((creature) => {
-                res.send(creature)
+                res.render(creature)
             })
     },
     edit: (req, res) => {
