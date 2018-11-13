@@ -14,7 +14,7 @@ const creatureController = {
     show: (req, res) => {
         Creature.findById(req.params.creatureId)
             .then((creature) => {
-                res.render(creature)
+                res.json(creature)
             })
     },
     edit: (req, res) => {
