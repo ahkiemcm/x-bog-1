@@ -4,7 +4,7 @@ const creatureController = {
     index: (req, res) => {
         Creature.find({})
             .then((creature) => {
-                res.render(creature)
+                res.json(creature)
             })
     },
     new: (req, res) => {
